@@ -17,7 +17,7 @@ class Layout extends Component {
 
   sideDrawerToggleHandler = () => {
     this.setState((prevState) => {
-      return { showSideDrawer: !this.state.showSideDrawer };
+      return { showSideDrawer: !prevState.showSideDrawer };
     });
   };
 
@@ -29,6 +29,7 @@ class Layout extends Component {
           drawerToggleClicked={this.sideDrawerToggleHandler}
         />
         <SideDrawer
+          isAuth={this.props.isAuthenticated}
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler}
         />
