@@ -12,7 +12,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 import * as actions from '../../store/actions/index';
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
   state = {
     purchasing: false,
   };
@@ -57,7 +57,6 @@ class BurgerBuilder extends Component {
     for (let key in disabledInfo) {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
-    // {salad: true, meat: false,...}
     let orderSummary = null;
     let burger = this.props.error ? (
       <p> Ingredient's can't be loaded! </p>
